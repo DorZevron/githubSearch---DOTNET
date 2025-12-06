@@ -33,6 +33,7 @@ public class BookmarkService
         //     ? new List<BookmarkEntry>()
         //     : JsonConvert.DeserializeObject<List<BookmarkEntry>>(bookmarksJson);
 
+
         if (string.IsNullOrEmpty(bookmarksJson))
             return new List<BookmarkEntry>();
         
