@@ -87,6 +87,8 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseCors("AllowAngularClient"); // CORS Policy 
+
 //Session must be before Authentication and Authorization
 app.UseSession();
 
