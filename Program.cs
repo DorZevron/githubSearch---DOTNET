@@ -50,7 +50,7 @@ builder.Services.AddScoped<BookmarkService>();
 //---------------
 // JWT Authentication
 //---------------
-var key = Encoding.ASCII.GetBytes("SECRET_KEY_123456789");
+var key = Encoding.ASCII.GetBytes("SUPER_SUPER_SECRET_KEY_123456789");
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

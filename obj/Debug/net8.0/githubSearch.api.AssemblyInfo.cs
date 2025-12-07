@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("githubSearch.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+728cdd7dca936318ad6c70b19f8379b79b654145")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c7e974abdd6193ce5e05d8cdea4577ac7fdde76")]
 [assembly: System.Reflection.AssemblyProductAttribute("githubSearch.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("githubSearch.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
