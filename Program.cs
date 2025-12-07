@@ -10,6 +10,19 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//---------------
+// CORS Policy
+//---------------
+var allowedOrigin = "http://localhost:4200";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularClient", policy  =>
+    {
+        policy.WithOrigins(allowedOrigin)
+              .AllowAnyHeader()  // allow any headers
+              .AllowAnyMethod(); // GET, POST, PUT
+    });
+});
 
 //---------------
 // Services
