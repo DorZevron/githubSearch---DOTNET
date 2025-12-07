@@ -1,4 +1,4 @@
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 
 
@@ -19,17 +19,22 @@ public class GithubService
         {
             BaseAddress = new Uri("https://api.github.com/")
         };
-        _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("githubSearchApp");
+        // _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("githubSearchApp");
+        _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("githubSearchApp/1.0");
+    _httpClient.DefaultRequestHeaders.Accept
+        .ParseAdd("application/vnd.github+json");
     }
 
 
     // Search repositories on GitHub
-    public async Task<JObject> SearchRepositories(string query)
+    public async Task<string> SearchRepositories(string query)
     {
-        var response = await _httpClient.GetAsync($"search/repositories?q={query}");
+        var response = await _httpClient.GetAsync($"search/repositories?q={query}&per_page=50");
         response.EnsureSuccessStatusCode();
 
         var json = await response.Content.ReadAsStringAsync();
-        return JObject.Parse(json);
+        Console.WriteLine($"json:{json}");
+        // return JsonConvert.DeserializeObject<dynamic>(json);
+        return json;
     }
 }

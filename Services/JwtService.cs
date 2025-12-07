@@ -12,7 +12,7 @@ namespace githubSearch.Api.Services;
 
 public class JwtService
 {
-   private readonly string _key = "SECRET_KEY_123456789";
+   private readonly string _key = "SUPER_SUPER_SECRET_KEY_123456789";
 
 
    // Generate JWT token

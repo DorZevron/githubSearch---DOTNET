@@ -26,9 +26,9 @@ public class AuthController : ControllerBase
     public IActionResult Login([FromBody] UserLoginDto user)
     {
         // For demo, hardcoded username and password
-        if (user.Username == "admin" && user.Password == "1234")
+        if (user.username == "admin" && user.password == "123456")
         {
-            var token = _jwt.GenerateToken(user.Username);
+            var token = _jwt.GenerateToken(user.username);
             return Ok(new { token });
         }
         return Unauthorized(new { message = "Invalid credentials" });
