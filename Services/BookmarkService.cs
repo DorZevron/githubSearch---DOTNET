@@ -29,6 +29,8 @@ public class BookmarkService
     {
         var bookmarksJson = Session.GetString("BOOKMARKS");
 
+        Console.WriteLine($"bookmarksJson:{bookmarksJson}");
+
         // return string.IsNullOrEmpty(bookmarksJson)
         //     ? new List<BookmarkEntry>()
         //     : JsonConvert.DeserializeObject<List<BookmarkEntry>>(bookmarksJson);
@@ -46,7 +48,8 @@ public class BookmarkService
     public void AddBookmark(BookmarkEntry entry)
     {
         var listBookmarks = GetBookmarks();
-        if (!listBookmarks.Any(b => b.Id == entry.Id))
+
+        if (!listBookmarks.Any(b => b.id == entry.id))
         {
             listBookmarks.Add(entry);
             Session.SetString("BOOKMARKS", JsonConvert.SerializeObject(listBookmarks));

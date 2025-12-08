@@ -27,7 +27,7 @@ public class JwtService
         {
             new Claim(ClaimTypes.Name, username)
         }),
-        Expires = DateTime.UtcNow.AddHours(1),
+        Expires = DateTime.UtcNow.AddMinutes(30),
         SigningCredentials = new SigningCredentials(
             new SymmetricSecurityKey(tokenKey),
             SecurityAlgorithms.HmacSha256Signature)
